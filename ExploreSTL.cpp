@@ -15,11 +15,7 @@ VECTOR
 int main()
 {
     setlocale(LC_ALL, "ru");
-    int a, b, c;
-    int array[10]{ 0,1,2,3,4,5,6,7,8,9 };
-    string str = "Hello world!";
     vector<int> intVector;
-    vector<char> charVector;
     intVector.push_back(7);
     intVector.push_back(9);
     intVector.push_back(3);
@@ -28,9 +24,12 @@ int main()
         int s = intVector[i] + 3;
         cout << "S = " << s << endl;
     }
-
-
-
+    cout << intVector.at(1) << endl; /// Метод отличается от квадратных скобок тем,
+                                     ///что он при выходе за границы памяти бросает исключение и не вторгается в чужую память
+                                     /// Он работает медленнее из-за того, что каждый раз проверяет границы вектора
+    intVector.clear();               /// Чистит вектор
+    intVector = { 303,506,777 };
+    intVector.pop_back();            /// Удаляет последний элемент вектора
 
     return 0;
 }
