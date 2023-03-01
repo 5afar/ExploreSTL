@@ -15,9 +15,9 @@ VECTOR
 */
 
 
-int main()
-{
-    setlocale(LC_ALL, "ru");
+
+
+void vec(){
     vector<int> intVector;
     intVector.reserve(6);           /// Данный метод принудительно выделяет память для вектора
     intVector.push_back(7);
@@ -38,7 +38,12 @@ int main()
     cout << intVector.empty() << endl; ///Проверяет пустой ли вектор
     intVector.resize(5);            ///Увеличивает или уменьшает вектор до указанного масштаба и при необходимости заполняет его нулями
     
+}
+int main()
+{
+    setlocale(LC_ALL, "ru");
+    
+    
 
     return 0;
 }
-
