@@ -42,7 +42,7 @@ void vec(){
 int main()
 {
     setlocale(LC_ALL, "ru");
-    
+    vec();
     
 
     return 0;
