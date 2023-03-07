@@ -6,7 +6,8 @@ public:
 	SmartPointer(T *ptr);
 	~SmartPointer();
 	T& operator*();
+
 private:
-	T* ptr;
+	T *ptr;
 };
 

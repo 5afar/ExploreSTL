@@ -20,10 +20,13 @@ VECTOR
 
 void vec(){
     vector<int> intVector;
+    vector<int>::iterator i; ///итератор вектора типа инт
     intVector.reserve(6);           /// Данный метод принудительно выделяет память для вектора
     intVector.push_back(7);
     intVector.push_back(9);
     intVector.push_back(3);
+    i = intVector.begin();
+    cout << *i << endl;
     for (int i = 0; i < intVector.size(); i++) {
         cout << i + 1 <<". " << intVector[i] << endl;
         int s = intVector[i] + 3;
@@ -36,6 +39,8 @@ void vec(){
     intVector = { 303,506,777 };
     intVector.shrink_to_fit();       /// Освобождает память и сокращает резерв до реального размера вектора
     intVector.pop_back();            /// Удаляет последний элемент вектора
+    i = intVector.begin();
+    cout << *i << endl;
     cout << intVector.empty() << endl; ///Проверяет пустой ли вектор
     intVector.resize(5);            ///Увеличивает или уменьшает вектор до указанного масштаба и при необходимости заполняет его нулями
     
@@ -45,7 +50,7 @@ int main()
 {
     setlocale(LC_ALL, "ru");
     vec();
-    SmartPointer<int> sp = new int();
+
 
     return 0;
 }
