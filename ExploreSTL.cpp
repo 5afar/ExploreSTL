@@ -45,7 +45,7 @@ int main()
 {
     setlocale(LC_ALL, "ru");
     vec();
-    
+    SmartPointer<int> sp = new int();
 
     return 0;
 }
