@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include <string>
 #include <vector>
+#include "SmartPointer.h"
 
 using namespace std;
 
@@ -39,6 +40,7 @@ void vec(){
     intVector.resize(5);            ///Увеличивает или уменьшает вектор до указанного масштаба и при необходимости заполняет его нулями
     
 }
+
 int main()
 {
     setlocale(LC_ALL, "ru");
