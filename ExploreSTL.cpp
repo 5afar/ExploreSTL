@@ -16,8 +16,6 @@ VECTOR
 */
 
 
-
-
 void vec(){
     vector<int> intVector;
     vector<int>::iterator i; ///итератор вектора типа инт
@@ -63,12 +61,28 @@ void vec(){
     
 }
 
+/*
+LIST
+
+
+*/
+void list() {
+
+}
+
 int main()
 {
     setlocale(LC_ALL, "ru");
+    cout << "Now working vector ===========" << endl;
     vec();
+    cout << "Vector is done!" << endl;
+
     SmartPointer<int> s = new int(5);
     cout << *s << endl;
+    cout << "Now working list =============" << endl;
+    list();
+    cout << "List is done!" << endl;
+    
 
     return 0;
 }
