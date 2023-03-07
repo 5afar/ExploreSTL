@@ -128,7 +128,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ExploreSTL.cpp" />
-    <ClCompile Include="SmartPointer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SmartPointer.h" />

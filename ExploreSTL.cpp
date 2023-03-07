@@ -50,7 +50,8 @@ int main()
 {
     setlocale(LC_ALL, "ru");
     vec();
-
+    SmartPointer<int> s = new int(5);
+    cout << *s << endl;
 
     return 0;
 }
