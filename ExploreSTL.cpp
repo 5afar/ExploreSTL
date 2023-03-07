@@ -41,6 +41,23 @@ void vec(){
     intVector.pop_back();            /// Удаляет последний элемент вектора
     i = intVector.begin();
     cout << *i << endl;
+    for (vector<int>::const_iterator f = intVector.cbegin(); f < intVector.cend(); f++)  /// циклично выводит вектор на экран при помощи итератора
+    {
+        cout << *f << endl;
+    }
+    vector<int> V{ 100,200,300,400,500 };
+    vector<int>::iterator iV;
+    iV = V.begin();
+    advance(iV, 2);   /// Меняет положение итератора
+    V.insert(iV, 999);  /// вставляет элемент в вектор на место куда указывает итератор
+    vector<int>::iterator iErase;
+    iErase = V.begin();
+    V.erase(iErase);
+    cout << "After insert 999 --------" << endl;
+    for (vector<int>::const_iterator f = V.cbegin(); f < V.cend(); f++)  /// циклично выводит вектор на экран при помощи итератора
+    {
+        cout << *f << endl;
+    }
     cout << intVector.empty() << endl; ///Проверяет пустой ли вектор
     intVector.resize(5);            ///Увеличивает или уменьшает вектор до указанного масштаба и при необходимости заполняет его нулями
     
