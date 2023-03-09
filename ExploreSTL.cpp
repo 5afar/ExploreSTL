@@ -26,7 +26,7 @@ void vec(){
     intVector.push_back(3);
     i = intVector.begin();
     cout << *i << endl;
-    for (int i = 0; i < intVector.size(); i++) {
+    for (int i = 0; i < intVector.size(); ++i) {
         cout << i + 1 <<". " << intVector[i] << endl;
         int s = intVector[i] + 3;
         cout << "S = " << s << endl;
@@ -40,7 +40,7 @@ void vec(){
     intVector.pop_back();            /// Удаляет последний элемент вектора
     i = intVector.begin();
     cout << *i << endl;
-    for (vector<int>::const_iterator f = intVector.cbegin(); f < intVector.cend(); f++)  /// циклично выводит вектор на экран при помощи итератора
+    for (vector<int>::const_iterator f = intVector.cbegin(); f < intVector.cend(); ++f)  /// циклично выводит вектор на экран при помощи итератора
     {
         cout << *f << endl;
     }
@@ -53,7 +53,7 @@ void vec(){
     iErase = V.begin();
     V.erase(iErase);
     cout << "After insert 999 --------" << endl;
-    for (vector<int>::const_iterator f = V.cbegin(); f < V.cend(); f++)  /// циклично выводит вектор на экран при помощи итератора
+    for (vector<int>::const_iterator f = V.cbegin(); f < V.cend(); ++f)  /// циклично выводит вектор на экран при помощи итератора
     {
         cout << *f << endl;
     }
@@ -73,7 +73,7 @@ LIST
 template <typename T>
 void PrintList(const list<T>& lst)   /// метод который принимает на входе ссылку на лист и выводит все его элементы в столбик
 {
-    for (auto i = lst.begin(); i != lst.end(); i++) {
+    for (auto i = lst.begin(); i != lst.end(); ++i) {
         cout << *i << endl;
     }
 }
@@ -83,7 +83,7 @@ void List() {
     myList.push_front('f');   /// добавляет элемент в начало списка
     list<char>::iterator i = myList.begin();  /// присваиваем итератору ссылку на начало списка
     cout <<"First element = "<< * i << endl;  ///вывод элемента, на который ссылается итератор
-    for (list<char>::iterator f = myList.begin(); f != myList.end(); f++)   ///стандартный вывод элементов в цикле
+    for (list<char>::iterator f = myList.begin(); f != myList.end(); ++f)   ///стандартный вывод элементов в цикле
     {
         cout << "Cicle - " << *f << endl;
     }
