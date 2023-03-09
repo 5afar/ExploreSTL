@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include <string>
 #include <vector>
+#include <list>
 #include "SmartPointer.h"
 
 using namespace std;
@@ -63,11 +64,36 @@ void vec(){
 
 /*
 LIST
-
+Реализует динамическую структуру данных, а именно, двусвязный список
+Контейнер, в котором реализована быстрая редакция данных (Добавление новых элементов и удаление)
+Нет перегрузки оператора [] и итератор произвольного доступа
+Нет возможности обратиться к конкретному элементу списка, необходимо проходится по всему контейнеру через каждый элемент
 
 */
-void list() {
-
+template <typename T>
+void PrintList(const list<T>& lst)   /// метод который принимает на входе ссылку на лист и выводит все его элементы в столбик
+{
+    for (auto i = lst.begin(); i != lst.end(); i++) {
+        cout << *i << endl;
+    }
+}
+void List() {
+    list<char> myList = {'a','b','c'};
+    myList.push_back('b');   /// добавляет элемент в конец списка
+    myList.push_front('f');   /// добавляет элемент в начало списка
+    list<char>::iterator i = myList.begin();  /// присваиваем итератору ссылку на начало списка
+    cout <<"First element = "<< * i << endl;  ///вывод элемента, на который ссылается итератор
+    for (list<char>::iterator f = myList.begin(); f != myList.end(); f++)   ///стандартный вывод элементов в цикле
+    {
+        cout << "Cicle - " << *f << endl;
+    }
+    myList.sort(); ///сортирует список от меньшего к большему либо в порядке алфавита
+    cout << "After sort =====" << endl;
+    PrintList(myList);
+    myList.pop_back();
+    myList.pop_front();
+    cout << "After pop ======" << endl;
+    PrintList(myList);
 }
 
 int main()
@@ -76,13 +102,10 @@ int main()
     cout << "Now working vector ===========" << endl;
     vec();
     cout << "Vector is done!" << endl;
-
     SmartPointer<int> s = new int(5);
     cout << *s << endl;
     cout << "Now working list =============" << endl;
-    list();
+    List();
     cout << "List is done!" << endl;
-    
-
     return 0;
 }
