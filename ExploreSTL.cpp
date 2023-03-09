@@ -90,9 +90,27 @@ void List() {
     myList.sort(); ///сортирует список от меньшего к большему либо в порядке алфавита
     cout << "After sort =====" << endl;
     PrintList(myList);
-    myList.pop_back();
-    myList.pop_front();
+    myList.pop_back();   /// удаляет последний элемент списка
+    myList.pop_front();  /// удаляет первый элемент списка
     cout << "After pop ======" << endl;
+    PrintList(myList);
+
+    myList.push_back('a');
+    myList.push_back('f');
+    myList.push_back('z');
+
+    cout << "After unique =======" << endl;
+    myList.unique();  /// удаляет дубликаты, которые стоят последовательно
+    PrintList(myList);
+
+    cout << "After reverse ======" << endl;
+    myList.reverse(); /// разворачивает список
+    PrintList(myList);
+    auto it = myList.begin();
+    cout << "After insert ======" << endl;
+    advance(it, 3);                          /// Метод, который смещает итератор
+    myList.insert(it, 'o');                  /// вставляет элемент в то место, на которое указывает итератор
+
     PrintList(myList);
 }
 
