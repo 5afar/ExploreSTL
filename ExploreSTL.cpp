@@ -109,9 +109,13 @@ void List() {
     auto it = myList.begin();
     cout << "After insert ======" << endl;
     advance(it, 3);                          /// Метод, который смещает итератор
-    myList.insert(it, 'o');                  /// вставляет элемент в то место, на которое указывает итератор
-
+    myList.insert(it, 'o');                  /// вставляет элемент в то место, на которое указывает итератор (метод erase работает также)
     PrintList(myList);
+    myList.remove('k');   /// удаляет все элементы, которые равны введенному
+    cout << "After assign ========" << endl;
+    list<int>  li;
+    li.assign(4, 69);   //// очищает лист от всех данных и заполняет его указанным количеством указанного элемента
+    PrintList(li);
 }
 
 int main()
