@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <list>
+#include <forward_list>
 #include "SmartPointer.h"
 
 using namespace std;
@@ -118,16 +119,29 @@ void List() {
     PrintList(li);
 }
 
+/*
+FORWARD LIST
+
+
+
+*/
+void fwlist() {
+
+}
+
 int main()
 {
     setlocale(LC_ALL, "ru");
-    cout << "Now working vector ===========" << endl;
+    cout << "The vector is working now ===========" << endl;
     vec();
     cout << "Vector is done!" << endl;
     SmartPointer<int> s = new int(5);
     cout << *s << endl;
-    cout << "Now working list =============" << endl;
+    cout << "The list is working now =============" << endl;
     List();
     cout << "List is done!" << endl;
+    cout << "The forward list is working now =============" << endl;
+    fwlist();
+    cout << "Forward list is done!" << endl;
     return 0;
 }
