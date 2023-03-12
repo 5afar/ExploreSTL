@@ -3,6 +3,7 @@
 #include <vector>
 #include <list>
 #include <forward_list>
+#include <set>
 #include "SmartPointer.h"
 
 using namespace std;
@@ -134,6 +135,31 @@ void fwlist() {
     fwl.insert_after(it, 7);/// вставляет элемент после указанного итератором
 }
 
+/*
+SET
+Реализован на основе бинарного дерева
+Всегда упорядочивает данные
+Всегда хранит уникальные значения
+В контейнере нельзя менять элементы потому, что от значения элемента зависит его положение в массиве
+Сет позволяет ускорить поиск элементов в больших массивах данных
+MULTISET позволяет хранить несколько одинаковых элементов
+*/
+void Set() {
+    set<int> mySet;
+    mySet.insert(1);
+    mySet.insert(2);
+    mySet.insert(3);
+    mySet.insert(0);
+    for (auto& item : mySet) {
+        cout << item << endl;
+    }
+    set<int>::iterator it =mySet.find(2);  /// осуществляет поиск определенного элемента и возвращает значение итератора
+    multiset<int> myMultiset = { 0,1,1,66,16,48,99 };
+    auto i1 = myMultiset.lower_bound(30);  /// возвращает итератор на искомый элемент, если он отсутствует, то возвращается итератор на следующий по величине
+    auto i2 = myMultiset.upper_bound(1); /// возвращает итератор на следующий по величине
+    auto eq = myMultiset.equal_range(48); /// возвращает итератор на искомый элемент и следующий за ним
+
+}
 int main()
 {
     setlocale(LC_ALL, "ru");
@@ -148,5 +174,8 @@ int main()
     cout << "The forward list is working now =============" << endl;
     fwlist();
     cout << "Forward list is done!" << endl;
+    cout << "The set is working now =============" << endl;
+    Set();
+    cout << "Set is done!" << endl;
     return 0;
 }
