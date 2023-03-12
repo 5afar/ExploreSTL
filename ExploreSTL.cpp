@@ -4,6 +4,7 @@
 #include <list>
 #include <forward_list>
 #include <set>
+#include <map>
 #include "SmartPointer.h"
 
 using namespace std;
@@ -160,6 +161,24 @@ void Set() {
     auto eq = myMultiset.equal_range(48); /// возвращает итератор на искомый элемент и следующий за ним
 
 }
+/*
+MAP
+Такой же контейнер как и SET, но состоит из пар <ключ,значение>
+
+*/
+void MAP() {
+    map<string, string>Dic;
+    pair<string, string> p = { "hi","привет" };  /// способ создания пары
+    Dic.insert(p);  /// добавление ранее созданной пары в коллекцию
+    Dic.insert(make_pair("good", "хорошо"));   /// второй способ добавления пары в коллекцию
+    Dic.insert(pair<string, string>("bad", "плохо"));  /// третий способ добавления пары в коллекци.
+    Dic.emplace("create", "создать"); /// четвертый способ добавления пары в коллекцию
+
+    for (auto& item : Dic) {
+        cout << item.first<<" "<<item.second << endl;
+    }
+
+}
 int main()
 {
     setlocale(LC_ALL, "ru");
@@ -177,5 +196,8 @@ int main()
     cout << "The set is working now =============" << endl;
     Set();
     cout << "Set is done!" << endl;
+    cout << "The map is working now =============" << endl;
+    MAP();
+    cout << "Map is done!" << endl;
     return 0;
 }
