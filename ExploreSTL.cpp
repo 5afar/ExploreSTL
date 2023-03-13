@@ -211,6 +211,7 @@ void Stack() {
 /*
     queue
     работает по принципу первый пришел первый ушел
+    Не работает с вектором
 
 */
 void Que() {
@@ -225,6 +226,21 @@ void Que() {
     auto a =qu._Get_container();  /// снимает ограничения с контейнера
 }
 
+/*
+Priority queue
+очередь с приоритетом позволяет упорядочить данные
+изначально сортируется от большего к меньшему
+Не может использовать лист
+Нельзя получить изначальный контейнер
+*/
+void Pq() {
+    priority_queue<int>q;
+    q.emplace(0);  /// добавляет элемент работает быстрее есть не во всех стандартах
+    q.push(3);  /// добавляет элемент
+    int s = q.size(); /// показывает размер очереди
+    q.top();  /// позволяет получить доступ к первому элементу в очереди
+    bool b =q.empty();  /// проверяет пустой ли контейнер
+}
 int main()
 {
     setlocale(LC_ALL, "ru");
@@ -258,5 +274,11 @@ int main()
     cout << "The stack is working now =============" << endl;
     Stack();
     cout << "stack is done!" << endl;
+    cout << "The queue is working now =============" << endl;
+    Que();
+    cout << "Queue is done!" << endl;
+    cout << "The priority queue is working now =============" << endl;
+    Pq();
+    cout << "Priority queue is done!" << endl;
     return 0;
 }
