@@ -182,6 +182,16 @@ void MAP() {
 int main()
 {
     setlocale(LC_ALL, "ru");
+    int arr[] = { 5,11,94,99,44 };
+   /* for each (int var in arr)             /// Начиная со стандарта C++ 11 данное написание не работает
+    {
+        cout << var << endl;
+    }
+    */
+    for (int& i : arr)   /// стандартный цикл range-based 
+    {
+        cout << i << endl;
+    }
     cout << "The vector is working now ===========" << endl;
     vec();
     cout << "Vector is done!" << endl;
