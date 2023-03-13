@@ -7,6 +7,7 @@
 #include <map>
 #include <stack>
 #include <deque>
+#include<queue>
 #include "SmartPointer.h"
 
 using namespace std;
@@ -205,6 +206,25 @@ void Stack() {
     stack<int, list<int>> slist;   /// ограничивает функционал листа до стека
 
 }
+
+
+/*
+    queue
+    работает по принципу первый пришел первый ушел
+
+*/
+void Que() {
+    queue<int > qu;
+    qu.emplace(3);   /// метод добавления новых элементов
+    qu.emplace(2);
+    cout<<qu.back()<<endl;    /// дает доступ к последнему элементу очереди
+    bool e = qu.empty();   /// проверяет контейнер на пустоту
+    cout<<qu.front()<<endl;   /// дает доступ к первому элементу очереди
+    qu.pop();     /// извлекает первый элемент из очереди
+    int a = qu.size();    /// проверяет размер очереди
+    auto a =qu._Get_container();  /// снимает ограничения с контейнера
+}
+
 int main()
 {
     setlocale(LC_ALL, "ru");
@@ -235,5 +255,8 @@ int main()
     cout << "The map is working now =============" << endl;
     MAP();
     cout << "Map is done!" << endl;
+    cout << "The stack is working now =============" << endl;
+    Stack();
+    cout << "stack is done!" << endl;
     return 0;
 }
